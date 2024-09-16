@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Background and reader for Web",
+  "version": "1.1",
+  "description": "允许用户为网页设置自定义壁纸、亚克力模糊效果，并提供阅读模式功能",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["settings.html", "settings.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

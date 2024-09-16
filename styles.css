@@ -1,0 +1,257 @@
+:root {
+  --custom-bg-image: none;
+  --custom-bg-blur: 0px;
+  --custom-bg-opacity: 1;
+}
+
+html, body {
+  background: transparent !important;
+}
+
+#custom-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9999;
+  pointer-events: none;
+  background-image: var(--custom-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: blur(var(--custom-bg-blur));
+  opacity: var(--custom-bg-opacity);
+}
+
+.custom-bg-transparent {
+  background-color: transparent !important;
+}
+
+#custom-bg-settings-btn, #custom-bg-reader-mode-btn {
+  position: fixed;
+  top: 20px;
+  z-index: 10000;  /* 增加 z-index 值 */
+  padding: 10px 15px;
+  background-color: rgba(240, 240, 240, 0.9);  /* 增加不透明度 */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+#custom-bg-settings-btn:hover, #custom-bg-reader-mode-btn:hover {
+  background-color: rgba(220, 220, 220, 1);  /* 完全不透明 */
+}
+
+#custom-bg-settings-btn {
+  right: 20px;
+}
+
+#custom-bg-reader-mode-btn {
+  right: 100px; /* 放在设置按钮的左边 */
+}
+
+#custom-bg-settings-panel {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10001;  /* 确保面板在按钮之上 */
+  display: none;
+}
+
+/* 移除之前的 SVG 相关样式 */
+
+/* ... 保留其他样式不变 ... */
+
+.custom-bg-settings-container {
+  padding: 20px;
+}
+
+.custom-bg-settings-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #2c3e50;
+}
+
+.setting {
+  margin-bottom: 20px;
+}
+
+.setting label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.setting input[type="file"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.setting input[type="range"] {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  color: black;  /* 将按钮文字颜色改为黑色 */
+  font-weight: bold;  /* 加粗文字以提高可读性 */
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: black;  /* 将主要按钮的文字颜色也改为黑色 */
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+#applyWallpaper {
+  background-color: #2ecc71;
+  color: black;  /* 将应用壁纸按钮的文字颜色改为黑色 */
+}
+
+#applyWallpaper:hover {
+  background-color: #27ae60;
+}
+
+#blurValue, #opacityValue {
+  display: inline-block;
+  width: 30px;
+  text-align: right;
+}
+
+/* ... 保留之前的样式 ... */
+
+#custom-bg-reader-mode-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  z-index: 10000;
+  overflow-y: auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.reader-mode-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.reader-mode-content h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.reader-mode-content h2 {
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.reader-mode-content h3 {
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.reader-mode-content p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.reader-mode-image-container {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.reader-mode-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.reader-mode-image-container figcaption {
+  margin-top: 10px;
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+.reader-mode-content a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px solid #3498db;
+}
+
+.reader-mode-content a:hover {
+  color: #2980b9;
+  border-bottom-color: #2980b9;
+}
+
+.reader-mode-content ul, .reader-mode-content ol {
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+.reader-mode-content li {
+  margin-bottom: 10px;
+}
+
+.reader-mode-btn {
+  position: fixed;
+  top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 10001;
+  transition: background-color 0.3s ease;
+}
+
+#close-reader-mode {
+  right: 20px;
+}
+
+#back-to-original {
+  right: 180px;
+}
+
+.reader-mode-btn:hover {
+  background-color: #2980b9;
+}
